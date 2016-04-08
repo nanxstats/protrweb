@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ProtrWeb - Getting Started with ProtrWeb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Nan Xiao">
+
+    <link href="cerulean.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+  <div class="container-fluid">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">ProtrWeb</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+              <li><a href="./" data-value="dataview">Home</a></li>
+              <li class="active"><a href="#" data-value="dataview">Get Help</a></li>
+              <li><a href="example.html" data-value="dataview" target="_blank">Example Input</a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Downloads<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="https://drive.google.com/file/d/0B1YdO4YnMkAxRWJXQkhjeG1rQlE/view" data-value="singleMean" target="_blank">The Paper</a></li>
+                  <li><a href="https://cran.r-project.org/web/packages/protr/vignettes/protr.pdf" data-value="compareMeans" target="_blank">Package Vignette</a></li>
+                  <li><a href="https://cran.r-project.org/web/packages/protr/protr.pdf" data-value="singleProp" target="_blank">Reference Manual</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="https://cran.r-project.org/package=protr" data-value="compareProps" target="_blank">protr on CRAN</a></li>
+                  <li><a href="http://github.com/road2stat/protr" data-value="crosstab" target="_blank">protr on GitHub</a></li>
+                  <li><a href="https://github.com/road2stat/protrweb" data-value="correlation" target="_blank">ProtrWeb on GitHub</a></li>
+                </ul>
+              </li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+
+      <h1>Getting Started with ProtrWeb</h1>
+      <p><em>ProtrWeb</em> does not require any knowledge of programming, it is a user-friendly and one-click-to-go online platform for computing the protein descriptors presented in the <em>protr</em> package. This is a short tutorial for using <em>ProtrWeb</em>.</p>
+
+      <h2>1. Upload Protein Sequence Files</h2>
+      <p>Open <a href="http://protr.org">http://protr.org</a>, you will see the interface of <em>ProtrWeb</em>:</p>
+
+      <img class="img-responsive" src="images/01.png"></img>
+
+      <p>First, choose the file's format in which your protein sequences stored. Then you can choose to upload the file or paste the file content in a text box to submit. Here, let's assume your protein sequences were stored in a FASTA file (see <a href="example.html">Example Input</a>), choose <code>'FASTA'</code> and <code>'Upload file'</code>, then click the <code>'Choose File'</code> button under <em>"Upload FASTA File"</em> in the left panel: </p>
+
+      <img class="img-responsive" src="images/02.png"></img>
+
+      <p>After selecting the file, the file will be automatically uploaded:</p>
+
+       <p>Note:
+       <em>Currently, the upload module does not support Internet Explorer 8 and below versions. Please use at least IE9 or latest version of Google Chrome, Mozilla Firefox and Apple Safari.</em>
+       </p>
+
+       <img class="img-responsive" src="images/03.png"></img>
+
+      <p>Or, if your protein sequence are stored in a plain-text file (see <a href="example.html">Example Input</a>), choose <code>Raw sequence</code>, <code>Upload file</code>, and click the <code>'Choose File'</code> button under <em>"Upload Raw Sequence File"</em> in the left panel. After selecting the file, the file will be automatically uploaded as above.</p>
+
+      <h2>2. Select Descriptors, Submit and Done!</h2>
+      <p>Select the descriptors you want to use in the left panel, click the <code>'Submit and calculate selected descriptors'</code> button:</p>
+
+      <img class="img-responsive" src="images/04.png"></img>
+
+      <p>A progress bar will appear in the upper right section of the page, showing the calculation progress:</p>
+
+      <img class="img-responsive" src="images/05.png"></img>
+
+      After a few seconds, the calculated descriptors should appear as a table, whose rows represents the protein sequences, the columns represents the descriptors. Click the <code>'Download as CSV'</code> button to download the result as a CSV file, the downloaded CSV file name contains the abbreviation name of the descriptors and file creation time:
+
+      <img class="img-responsive" src="images/06.png"></img>
+
+      <p>You can then change the selected descriptors, re-submit, and the calculation result in the right panel will be automatically refreshed.</p>
+
+      <p>If you feel protr / ProtrWeb helps your research, please cite our paper in your publication:</p>
+
+      <div class="alert alert-success">
+          Nan Xiao, Dong-Sheng Cao, Min-Feng Zhu, and Qing-Song Xu. (2015). protr/ProtrWeb: R package and web server for generating various numerical representation schemes of protein sequences. <em>Bioinformatics</em> 31, 1857-1859.
+      </div>
+
+    <!-- Footer -->
+      <hr>
+      <footer id="footer">
+        The ProtrWeb app is developed and maintained by <a href="http://nanx.me">Nan Xiao</a>. <br/>
+        ProtrWeb has been tested under IE9, IE10, Google Chrome, Mozilla Firefox and Apple Safari.<br/><br/>
+      </footer>
+
+    </div> <!-- /container -->
+
+    </div>
+
+    <script src="shared/jquery.js"></script>
+    <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
