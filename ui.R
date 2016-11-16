@@ -1,7 +1,7 @@
 library('shiny')
 library('protr')
 
-# actionButton with dark color
+# dark actionButton
 nx.actionButton = function (inputId, label, icon = NULL) {
   if (!is.null(icon))
     buttonContent <- list(icon, label)
@@ -82,10 +82,6 @@ shinyUI(fluidPage(theme = 'cerulean.css',
                   ),
 
                   mainPanel(
-
-                    # css hack to move the progress bar to a lower place
-                    # from https://gist.github.com/johndharrison/9578241
-                    tags$link(rel = 'stylesheet', type = 'text/css', href = 'progbar.css'),
 
                     tabsetPanel(id = 'protrwebmain',
                                 tabPanel("Introduction",

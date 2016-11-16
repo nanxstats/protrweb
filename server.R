@@ -68,7 +68,7 @@ shinyServer(function(input, output, session) {
 
         for ( i in 1L:n ) {
           outlist[[i]] = eval(parse(text = exec[i]))
-          incProgress(1/n, detail = paste("Finished part", i))
+          incProgress(1/n, detail = paste("Finished Part", i))
         }
 
       })
