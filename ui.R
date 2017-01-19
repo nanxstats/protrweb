@@ -6,7 +6,7 @@ nx.actionButton = function (inputId, label, icon = NULL) {
   if (!is.null(icon))
     buttonContent <- list(icon, label)
   else buttonContent <- label
-  tags$button(id = inputId, type = "button", class = "btn btn-primary action-button",
+  tags$button(id = inputId, type = 'button', class = 'btn btn-primary action-button',
               buttonContent)
 }
 
@@ -14,19 +14,19 @@ shinyUI(fluidPage(theme = 'cerulean.css',
 
                   fluidRow(column(12, includeHTML('header.html'))),
 
-                  headerPanel(title = "ProtrWeb", windowTitle = 'ProtrWeb'),
+                  headerPanel(title = 'ProtrWeb', windowTitle = 'ProtrWeb'),
 
                   sidebarPanel(
 
-                    radioButtons("formatType", "Step 1. Choose file format",
-                                 c("FASTA" = "fasta",
-                                   "Raw sequence" = "rawseq")),
+                    radioButtons('formatType', 'Step 1. Choose file format',
+                                 c('FASTA' = 'fasta',
+                                   'Raw sequence' = 'rawseq')),
 
-                    radioButtons("inputType", "Step 2. Upload or paste?",
-                                 c("Upload file" = "uploadfile",
-                                   "Paste file content" = "pastecontent")),
+                    radioButtons('inputType', 'Step 2. Upload or paste?',
+                                 c('Upload file' = 'uploadfile',
+                                   'Paste file content' = 'pastecontent')),
 
-                    strong("Step 3. Upload or paste protein sequence"),
+                    strong('Step 3. Upload or paste protein sequence'),
 
                     conditionalPanel(
                       a('Click here to download an example FASTA file', href='example.fasta'),
@@ -39,7 +39,7 @@ shinyUI(fluidPage(theme = 'cerulean.css',
                       a('Click here to download an example FASTA file', href='example.fasta'),
                       br(),
                       condition = "input.formatType == 'fasta' & input.inputType == 'pastecontent'",
-                      tags$textarea(id = "text1", rows = 5, cols = 60, 'Paste FASTA file content here')
+                      tags$textarea(id = 'text1', rows = 5, cols = 60, 'Paste FASTA file content here')
                     ),
 
                     conditionalPanel(
@@ -53,12 +53,12 @@ shinyUI(fluidPage(theme = 'cerulean.css',
                       a('Click here to download an example raw sequence file', href='example.txt'),
                       br(),
                       condition = "input.formatType == 'rawseq' & input.inputType == 'pastecontent'",
-                      tags$textarea(id = "text2", rows = 5, cols = 60, 'Paste raw sequence here')
+                      tags$textarea(id = 'text2', rows = 5, cols = 60, 'Paste raw sequence here')
                     ),
 
                     tags$hr(),
-                    strong("Step 4. Select descriptor type(s)"),
-                    checkboxGroupInput("variable", "Descriptor type (dimension):",
+                    strong('Step 4. Select descriptor type(s)'),
+                    checkboxGroupInput('variable', 'Descriptor type (dimension):',
                                        c('Amino Acid Composition (20)' = 'aac',
                                          'Dipeptide Composition (400)' = 'dc',
                                          'Tripeptide Composition (8000)' = 'tc',
@@ -82,14 +82,14 @@ shinyUI(fluidPage(theme = 'cerulean.css',
                   mainPanel(
 
                     tabsetPanel(id = 'protrwebmain',
-                                tabPanel("Introduction",
+                                tabPanel('Introduction',
                                          includeHTML('introtext.html')
                                 ),
 
-                                tabPanel("Computed Descriptors",
-                                         h3("Computed Descriptors"),
+                                tabPanel('Computed Descriptors',
+                                         h3('Computed Descriptors'),
                                          tags$hr(),
-                                         tableOutput("desc"),
+                                         tableOutput('desc'),
                                          tags$hr(),
                                          downloadButton('downloadData', 'Download as CSV',
                                                         class = 'btn btn-primary btn-large')

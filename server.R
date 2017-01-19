@@ -22,14 +22,14 @@ shinyServer(function(input, output, session) {
   observe({
     # switch tab
     if ( (!is.null(input$file1) | !is.null(input$file2)) & !is.null(input$variable) & input$protrsubmitButton != 0L ) {
-      updateTabsetPanel(session, "protrwebmain", selected = "Computed Descriptors")
+      updateTabsetPanel(session, 'protrwebmain', selected = 'Computed Descriptors')
     }
   })
 
   observe({
     # switch tab
     if ( ((input$text1 != 'Paste FASTA file content here') | (input$text2 != 'Paste raw sequence here')) & !is.null(input$variable) & input$protrsubmitButton != 0L ) {
-      updateTabsetPanel(session, "protrwebmain", selected = "Computed Descriptors")
+      updateTabsetPanel(session, 'protrwebmain', selected = 'Computed Descriptors')
     }
   })
 
@@ -68,7 +68,7 @@ shinyServer(function(input, output, session) {
 
         for ( i in 1L:n ) {
           outlist[[i]] = eval(parse(text = exec[i]))
-          incProgress(1/n, detail = paste("Finished Part", i))
+          incProgress(1/n, detail = paste('Finished Part', i))
         }
 
       })
