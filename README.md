@@ -1,4 +1,4 @@
-# ProtrWeb  <a href="http://nanx.me/protr/"><img src="http://nanx.me/images/project-protr.png" align="right" alt="logo" height="180" width="180" /></a>
+# ProtrWeb  <a href="https://nanx.me/protr/"><img src="https://nanx.me/images/project-protr.png" align="right" alt="logo" height="180" width="180" /></a>
 
 This repository stores the source code of the Shiny web application [ProtrWeb](http://protr.org). The application is hosted by shinyapps.io.
 

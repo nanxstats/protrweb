@@ -75,9 +75,7 @@ shinyUI(fluidPage(theme = 'cerulean.css',
 
                     hr(),
 
-                    nx.actionButton('protrsubmitButton', 'Compute selected descriptors', icon('check')),
-                    tags$hr(),
-                    includeHTML('counter.html')
+                    nx.actionButton('protrsubmitButton', 'Compute selected descriptors', icon('check'))
 
                   ),
 
