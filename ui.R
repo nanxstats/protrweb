@@ -1,5 +1,6 @@
 library('shiny')
 library('protr')
+library('DT')
 
 # primary action button
 nx.actionButton = function (inputId, label, icon = NULL) {
@@ -43,7 +44,7 @@ shinyUI(fluidPage(
       a('Click here to download an example FASTA file', href='example.fasta'),
       br(),
       condition = "input.formatType == 'fasta' & input.inputType == 'pastecontent'",
-      tags$textarea(id = 'text1', rows = 5, cols = 60, 'Paste FASTA file content here')
+      textAreaInput('text1', 'Paste FASTA file content here')
     ),
 
     conditionalPanel(
@@ -57,10 +58,10 @@ shinyUI(fluidPage(
       a('Click here to download an example raw sequence file', href='example.txt'),
       br(),
       condition = "input.formatType == 'rawseq' & input.inputType == 'pastecontent'",
-      tags$textarea(id = 'text2', rows = 5, cols = 60, 'Paste raw sequence here')
+      textAreaInput('text2', 'Paste raw sequence here')
     ),
 
-    tags$hr(),
+    hr(),
     strong('Step 4. Select descriptor type(s)'),
     checkboxGroupInput(
       'variable', 'Descriptor type (dimension):',
@@ -100,9 +101,9 @@ shinyUI(fluidPage(
       tabPanel(
         'Computed Descriptors',
         h3('Computed Descriptors'),
-        tags$hr(),
-        tableOutput('desc'),
-        tags$hr(),
+        hr(),
+        DT::dataTableOutput('desc'),
+        hr(),
         downloadButton(
           'downloadData', 'Download as CSV',
           class = 'btn btn-primary btn-large')

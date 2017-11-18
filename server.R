@@ -1,5 +1,6 @@
 library('shiny')
 library('protr')
+library('DT')
 
 extractCTD = function (x) c(extractCTDC(x), extractCTDT(x), extractCTDD(x))
 
@@ -99,10 +100,12 @@ shinyServer(function(input, output, session) {
 
   })
 
-  output$desc = renderTable({
-    descT = descTable()
-    descT
-  })
+  output$desc = DT::renderDataTable(
+    DT::datatable(
+      descTable(), width = 1, height = 1,
+      options = list(searching = FALSE, pageLength = 10,
+                     scrollX = TRUE, lengthChange = FALSE))
+  )
 
   output$downloadData = downloadHandler(
     filename = function() {
